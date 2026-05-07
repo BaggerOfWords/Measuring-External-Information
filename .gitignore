@@ -1,0 +1,39 @@
+# Python cache files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+
+# Mac system files
+.DS_Store
+._.DS_Store
+
+# Log folders
+logs/
+
+#Others
+/LLM_Reviews/Supervised_Detector
+Images/
+LLM_Reviews/API_utils/
+Misc.ipynb
+api_job.sh
+api_job_gemini.sh
+Scores_viz.ipynb
+Misc/
+
+# Virtual environments
+.venv
+
+#Mega ablations helper files
+generate_tasks.py
+find_crashes.py
+master_ablation.slurm
+tasks.txt
+editlens.py
+quick_scoring.sh
+EditLens/
+quick_job_hybrid.sh
+LLM_Reviews/._binoculars
