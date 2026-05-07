@@ -4,7 +4,7 @@
 
 This repository contains the data and evaluation scripts used to measure contextual influence and token-level log-probability deltas across different text generation tasks. The project evaluates Large Language Models (LLMs) across three distinct domains: **Essays**, **LLM Reviews**, and **Reference Letters**.
 
-## 📂 Project Structure
+## Project Structure
 
 The repository is divided into three main domains, each containing its respective dataset and a dedicated scoring script tailored to its specific task context:
 ```
@@ -26,7 +26,7 @@ The repository is divided into three main domains, each containing its respectiv
 ### Generic Instructions ($C$)
 While the three scoring scripts (`score_essays.py`, `score_reviews.py`, `score_letters.py`) share a similar core engine for computing log-probabilities and extracting hint spans, they differ in how they handle context. Each script specifically accounts for differences in the **Generic Instructions ($C$)**. As defined in our corresponding paper, $C$ represents the task-specific framing injected into the context (e.g., *"You are an expert reviewer for the ICLR Conference..."*).
 
-## ⚙️ Setup and Installation
+## Setup and Installation
 
 This codebase relies on PyTorch and the Hugging Face ecosystem. To install the required dependencies, run:
 ```bash
@@ -34,7 +34,7 @@ pip install torch transformers scikit-learn nltk numpy tqdm
 ```
 *(Note: If you are using the `keywords` or `extractive` hint methods, the script will automatically download necessary NLTK data during execution).*
 
-## 🚀 Usage
+## Usage
 
 ### 1. Running a Single Job Locally
 You can run the scoring engine directly via Python. The script extracts baseline log-probabilities and compares them against "hinted" log-probabilities using various ablation methods (e.g., `random_spans`, `surprisal_spans`, `prefix`).
@@ -109,5 +109,5 @@ python LLM_Reviews/score_reviews.py \
   --target_reviewer "$reviewer_idx"
 ```
 
-## 📊 Output Format
+## Output Format
 The scripts generate a JSON array containing the token-level deltas for each evaluation. Each entry includes the `baseline_logprobs`, the `hinted_logprobs`, and the total `context_length` for downstream analysis and visualization.
